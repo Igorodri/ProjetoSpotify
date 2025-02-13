@@ -1,8 +1,7 @@
 import React from 'react'
 import SingleItem from './SingleItem'
 
-const ItemList = ({title, items}) => {
-    // console.log(items)
+const ItemList = ({ title, items}) => {
 
   return (
           <div className="item-list">
@@ -15,31 +14,9 @@ const ItemList = ({title, items}) => {
     
             <div className="item-list__container">
 
-            {items === 5 ? (
-                <>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                </>
-            ) : (
-              <>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                  <SingleItem/>
-                </>
-            ) 
-                
-            }
-            
+            {Array(items).fill().map((currentValue, index) => (
+            <SingleItem  key={`${title} - ${index}`}/>
+          ))}
 
       </div>
     </div>
